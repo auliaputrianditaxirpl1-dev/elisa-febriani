@@ -2,20 +2,27 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <!-- Meta Viewport (Modul Hal. 2) -->
+    <!-- Meta Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Elisa - SMK Brantas Karangkates</title>
-    <!-- Font Modern -->
+    <!-- Font Modern & FontAwesome untuk Ikon Panah -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Header & Navigasi (Flexbox 1D) -->
+    <!-- Header & Navigasi (Menetap di Atas / Sticky) -->
     <header class="navbar">
-        <div class="logo">Elisa<span>.Profile</span></div>
+        <div class="navbar-left">
+            <!-- Tombol Kembali (Ubah atribut href="#" ke halaman utama Anda) -->
+            <a href="https://portofoliotim.vercel.app/" class="back-btn" title="Kembali">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <div class="logo">Elisa<span>.Profile</span></div>
+        </div>
         <nav>
             <ul class="nav-list">
                 <li><a href="#hero">Beranda</a></li>
