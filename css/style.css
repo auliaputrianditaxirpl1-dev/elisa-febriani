@@ -1,14 +1,14 @@
 /* ==========================================================================
-   CSS Dasar (Reset, Variabel & Efek Visual) - Halaman 8 Modul
+   CSS Dasar (Reset, Variabel & Efek Visual)
    ========================================================================== */
 :root {
-    --warna-utama: #d97706;         /* Amber / Oranye elegan */
-    --warna-utama-hover: #b45309;   /* Oranye gelap hover */
-    --warna-teks: #f3f4f6;          /* Teks terang */
-    --warna-pudar: #9ca3af;         /* Teks abu-abu */
-    --warna-latar: #1e1512;         /* Cokelat gelap utama */
-    --warna-kartu: #281d18;         /* Cokelat kartu */
-    --border-color: #3e2d26;        /* Garis batas */
+    --warna-utama: #d97706;          /* Amber / Oranye elegan */
+    --warna-utama-hover: #b45309;    /* Oranye gelap hover */
+    --warna-teks: #f3f4f6;           /* Teks terang */
+    --warna-pudar: #9ca3af;          /* Teks abu-abu */
+    --warna-latar: #1e1512;          /* Cokelat gelap utama */
+    --warna-kartu: #281d18;          /* Cokelat kartu */
+    --border-color: #3e2d26;         /* Garis batas */
     --shadow-halus: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
     --shadow-hover: 0 20px 25px -5px rgba(217, 119, 6, 0.15);
     --radius: 14px;
@@ -32,14 +32,12 @@ body {
     line-height: 1.6;
 }
 
-/* Gambar Responsif (Halaman 6 Modul) */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* Wadah Utama Konten (Halaman 10 Modul) */
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -47,10 +45,8 @@ img {
 }
 
 /* ==========================================================================
-   Gaya Mobile (Dasar) & Flexbox - Halaman 9 Modul
+   Gaya Navbar & Tombol Kembali (Sticky di Atas)
    ========================================================================== */
-
-/* Header & Navigasi dengan Flexbox + Efek Glassmorphism */
 .navbar {
     display: flex;
     flex-direction: column;
@@ -60,15 +56,48 @@ img {
     padding: 1rem;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
     border-bottom: 1px solid var(--border-color);
+}
+
+/* Kelompok Sisi Kiri (Tombol Kembali & Logo) */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Tombol Kembali (Kecil, Bulat, Menempel di Kiri) */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--warna-teks);
+    font-size: 0.85rem;
+    text-decoration: none;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background-color: rgba(217, 119, 6, 0.2);
+    border-color: var(--warna-utama);
+    color: var(--warna-utama);
 }
 
 .logo {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--warna-teks);
-    margin-bottom: 0.5rem;
 }
 
 .logo span {
@@ -93,7 +122,7 @@ img {
     color: var(--warna-utama);
 }
 
-/* Hero Section (Flexbox 1D) */
+/* Hero Section */
 .hero {
     display: flex;
     flex-direction: column;
@@ -108,7 +137,6 @@ img {
     border: 1px solid var(--border-color);
 }
 
-/* Foto Profil Bulat (Halaman 6 Modul) */
 .hero-foto img {
     width: 150px;
     height: 150px;
@@ -163,9 +191,8 @@ img {
 }
 
 /* ==========================================================================
-   Grid untuk Keahlian dan Galeri - Halaman 9 Modul
+   Grid untuk Keahlian dan Galeri
    ========================================================================== */
-
 .section {
     margin-bottom: 2.5rem;
 }
@@ -177,14 +204,12 @@ img {
     color: var(--warna-teks);
 }
 
-/* Grid Layout (Gaya Dasar HP: 1 Kolom) */
 .grid-keahlian, .grid-galeri {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
 }
 
-/* Kartu Keahlian + Efek Hover */
 .kartu-keahlian {
     background-color: var(--warna-kartu);
     padding: 1.8rem;
@@ -215,7 +240,6 @@ img {
     font-size: 0.9rem;
 }
 
-/* Kartu Galeri + Efek Zoom Gambar */
 .kartu-galeri {
     background-color: var(--warna-kartu);
     border-radius: var(--radius);
@@ -268,17 +292,18 @@ img {
 }
 
 /* ==========================================================================
-   Media Query - Halaman 9 & 10 Modul
+   Media Query
    ========================================================================== */
-
-/* Tablet Breakpoint (min-width: 768px) - Halaman 5 & 10 Modul */
 @media (min-width: 768px) {
     .navbar {
         flex-direction: row;
         justify-content: space-between;
+        padding: 1rem 2rem;
     }
 
-    .logo {
+    .navbar-left {
+        width: auto;
+        justify-content: flex-start;
         margin-bottom: 0;
     }
 
@@ -298,14 +323,13 @@ img {
     }
 }
 
-/* Desktop Breakpoint (min-width: 1024px) - Halaman 5 & 10 Modul */
 @media (min-width: 1024px) {
     .grid-keahlian, .grid-galeri {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-/* Mode Gelap Otomatis (Tugas Pengayaan Halaman 11) */
+/* Mode Gelap Otomatis */
 @media (prefers-color-scheme: dark) {
     :root {
         --warna-latar: #140e0c;
